@@ -18,20 +18,54 @@ public class Unit : MonoBehaviour
             hp = Mathf.Clamp(value, 0, fullHP);
         }
     }
-    
-    //스피드
-    [SerializeField] private float speed;
-    protected float Speed
+
+    [SerializeField] private float jumpForce;
+    protected float JumpForce
     {
-        get { return speed; }
+        get { return jumpForce; }
         set
         {
-            speed = Mathf.Max(0, value);
+            jumpForce = Mathf.Max(0, value);
+        }
+    }
+    
+    
+    
+    protected Rigidbody2D rb;
+    [SerializeField] protected Animator animator;
+
+    protected void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        if (rb == null) { Debug.LogError("Rigidbody2D가 없습니다.");}
+
+        animator = GetComponentInChildren<Animator>();
+        if (animator == null) { Debug.LogError("Animator가 없습니다.");}
+    }
+
+    protected void Jump()
+    {
+        if (rb != null)
+        {
+            //땅에 닿았을 때만 점프되게 할 예정
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            }
         }
     }
 
-    protected virtual void Move(Vector3 dir)
+    protected void Slide()
     {
-        transform.position += dir * speed * Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            animator.SetBool("IsSlide", true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            animator.SetBool("IsSlide", false);
+        }
+        
     }
 }
