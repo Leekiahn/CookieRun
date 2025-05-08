@@ -28,12 +28,12 @@ public class GameManager : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
-        uiManager = FindObjectOfType<UIManager>();
+        //uiManager = FindObjectOfType<UIManager>();
     }
 
     private void Start()
     {
-        uiManager.UpdateScore(0);
+        //uiManager.UpdateScore(0);
     }
 
     private void Update()
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         if (!isGameOver)
         {
             score += value;
-            uiManager.UpdateScore(score);
+            //uiManager.UpdateScore(score);
         }
     }
 
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
         //게임정지
         Time.timeScale = 0f;
-        uiManager.SetRestart();
+        //uiManager.SetRestart();
     }
 
     public void RestartGame()
