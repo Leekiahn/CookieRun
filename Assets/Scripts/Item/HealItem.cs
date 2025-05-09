@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealItem : MonoBehaviour,IItemEffect
 {
-    private float value = 15;
+    public float value = 15f;
 
     public void ApplyEffect(IEffectTarget target)
     {

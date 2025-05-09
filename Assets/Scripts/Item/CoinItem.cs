@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinItem : MonoBehaviour,IItemEffect
 {
-    public float value = 10;
+    public float value = 10f;
 
     public void ApplyEffect(IEffectTarget target)
     {

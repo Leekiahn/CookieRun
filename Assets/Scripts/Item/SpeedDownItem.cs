@@ -14,13 +14,16 @@ public class SpeedDownItem : MonoBehaviour,IItemEffect
         //}
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        IEffectTarget target = other.GetComponent<IEffectTarget>();
-        if (target != null)
+        if (other.CompareTag("Player"))
         {
-            ApplyEffect(target);
-            Destroy(gameObject); // 아이템 제거
+            var effectTarget = other.GetComponent<IEffectTarget>();
+            if (effectTarget != null)
+            {
+                ApplyEffect(effectTarget);
+                Destroy(gameObject);
+            }
         }
     }
 }
