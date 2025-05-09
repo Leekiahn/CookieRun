@@ -113,7 +113,7 @@
     }
     
   ],
-  "Speed" :[
+  "SpeedUp" :[
     {
       "Skin": 0,
       "Value": 1.5,
@@ -144,6 +144,39 @@
       "Value": 1.5,
       "Position": 8
     }
+  ],
+  "SpeedDown":[
+       {
+      "Skin": 0,
+      "Value": -1.5,
+      "Position": 1
+    },
+    {
+      "Skin": 0,
+      "Value": -1.5,
+      "Position": 3
+    },
+    {
+      "Skin": 0,
+      "Value": -1.5,
+      "Position": 4
+    },
+    {
+      "Skin": 0,
+      "Value": -1.5,
+      "Position": 6
+    },
+    {
+      "Skin": 0,
+      "Value": -1.5,
+      "Position": 7
+    },
+    {
+      "Skin": 0,
+      "Value": -1.5,
+      "Position": 8
+    }
   ]
+  
   
 }
