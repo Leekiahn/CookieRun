@@ -2,15 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedUpItem : MonoBehaviour, IItemEffect
+public class SpeedUpItem : Item, IItemEffect
 {
     public float speedUp = 1.5f;
+    [SerializeField]
+    private SpriteRenderer _renderer;
+
+    public SpeedUpItem(GroundObjectData data) : base(data)
+    {
+
+    }
 
     public void ApplyEffect(IEffectTarget target)
     {
-        //if (target is )//¸Ê ÀÌ³ª ÇÃ·¹ÀÌ¾î 
+        //if (target is )//ï¿½ï¿½ ï¿½Ì³ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ 
         //{
-        //    player.IncreeseSpeed(speedUp); //ÀÓ½Ã·Î ÇÃ·¹ÀÌ¾î
+        //    player.IncreeseSpeed(speedUp); //ï¿½Ó½Ã·ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½
         //}
     }
 

@@ -1,10 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinItem : MonoBehaviour,IItemEffect
+public class CoinItem : Item, IItemEffect
 {
     public float value = 10f;
+    [SerializeField]
+    private SpriteRenderer _renderer;
+
+    public CoinItem(GroundObjectData data) : base(data)
+    {
+
+    }
 
     public void ApplyEffect(IEffectTarget target)
     {
