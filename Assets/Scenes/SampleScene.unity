@@ -169,7 +169,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 4397843028230357632, guid: cca33de6fd2fb434bba0c1b2712b6aca, type: 3}
   healItemPrefab: {fileID: 936471770249398814, guid: cae5ed393ac1b2d4ebce97b03685693a, type: 3}
-  SpeedPrefab: {fileID: 5206318213154352813, guid: bff7fd056d1abd145a938e165d9012d2, type: 3}
+  SpeedUpPrefab: {fileID: 470964938979987682, guid: c8f47ecbfa77a99478e571873db212f9, type: 3}
+  SpeedDownPrefab: {fileID: 8650349551632361918, guid: 15854d04127dd8c4c94f2261aceaa516, type: 3}
+  jsonFile: {fileID: 4900000, guid: b57fb18a0921c6942ada518a65dba91c, type: 3}
 --- !u!1 &1880278213
 GameObject:
   m_ObjectHideFlags: 0

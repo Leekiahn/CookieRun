@@ -6,17 +6,29 @@ public class ItemManager : MonoBehaviour
 {
     public GameObject coinPrefab;
     public GameObject healItemPrefab;
-    public GameObject SpeedPrefab;
+    public GameObject SpeedUpPrefab;
+    public GameObject SpeedDownPrefab;
 
     public TextAsset jsonFile;
 
-    public void CreateItem(ItemData data)
+    void Start()
     {
-        GameObject prefeb = null;
+        string json = jsonFile.text;
+        MapData mapData = JsonUtility.FromJson<MapData>(json);
 
-        switch (data.type)
-        {   
-            
+        SpawnItems(mapData.Coin, coinPrefab);
+        SpawnItems(mapData.Heal, healItemPrefab);
+        SpawnItems(mapData.SpeedUp, SpeedUpPrefab);
+        SpawnItems(mapData.SpeedDown, SpeedDownPrefab);
+    }
+
+    private void SpawnItems<T>(List<T> items, GameObject prefab) where T : IItemData
+    {
+        foreach (var item in items)
+        {
+            // 아이템의 위치를 기반으로 생성
+            Vector3 position = new Vector3(item.Position, 0, 0);
+            Instantiate(prefab, position, Quaternion.identity);
         }
     }
 }
